@@ -8,6 +8,7 @@
 import Foundation
 
 struct Restaurant {
+    let id: Int
     let image: String
     let latitude: Double
     let longitude: Double
@@ -23,6 +24,7 @@ struct Restaurant {
 struct RestaurantList {
     var restaurantArray: [Restaurant] = [
         Restaurant(
+            id: 1,
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170712_44%2F1499829806371zeBdS_JPEG%2FIMG_1167.jpg",
             latitude: 37.514746,
             longitude: 126.898935,
@@ -34,6 +36,7 @@ struct RestaurantList {
             type: 300
         ),
         Restaurant(
+            id: 2,
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220125_203%2F1643090127099hJdXt_JPEG%2F%25B5%25A5%25C0%25CF%25B8%25AE%25C7%25AA%25B5%25E53.jpg",
             latitude: 37.516107,
             longitude: 126.886853,
@@ -45,6 +48,7 @@ struct RestaurantList {
             type: 100
         ),
         Restaurant(
+            id: 3,
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fmyplace-phinf.pstatic.net%2F20200805_46%2F1596638713444O2aFh_JPEG%2Fupload_bdf4d5522f8457c7ee6a70f078385a09.jpg%3Ftype%3Dw1500_60_sharpen",
             latitude: 37.518996,
             longitude: 126.885964,
@@ -56,6 +60,7 @@ struct RestaurantList {
             type: 200
         ),
         Restaurant(
+            id: 4,
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220321_224%2F1647864887877IgL0B_JPEG%2F%25BD%25AC%25C1%25EE%25BA%25A3%25C0%25CC%25B1%25DB_%25B8%25DE%25B4%25BA_%25C8%25AB%25BA%25B8_%25C0%25CC%25B9%25CC%25C1%25F6_18.JPG",
             latitude: 37.517597,
             longitude: 126.887247,
@@ -67,6 +72,7 @@ struct RestaurantList {
             type: 200
         ),
         Restaurant(
+            id: 5,
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyNDAyMTZfODEg%2FMDAxNzA4MDQwMjI4NTc2.yUyCYKI-2s0bKERjiG32FAslwx0hu6cUrTsAyC6uWyog.vI5yXJcBbcL8eMOzC23k0jKx3sT5QqvvgeJ7N3WP048g.JPEG%2F20240131_114414.heic.jpg%3Ftype%3Dw1500_60_sharpen",
             latitude: 37.517801,
             longitude: 126.887159,
@@ -78,6 +84,7 @@ struct RestaurantList {
             type: 100
         ),
         Restaurant(
+            id: 6,
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzEyMThfMTgy%2FMDAxNzAyODcxODI2NjIx.WMLXCYtCEu_wHtSZjHfeRxnRuq9QB8ShrajsuldMAfEg.JGXZgl6qxtnjaQVkcp-fLnhfsa4iFxFi-5Sp8X3lKKcg.JPEG%2F8844E8E3-47D7-462A-9936-B659D330071D.jpeg%3Ftype%3Dw1500_60_sharpen",
             latitude: 37.516912,
             longitude: 126.888908,
@@ -89,6 +96,7 @@ struct RestaurantList {
             type: 200
         ),
         Restaurant(
+            id: 7,
             image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA5MDFfMTc1%2FMDAxNjkzNTY0NTIyNDA4.IblBXWrjeR8ByZJqn6gSnZbL8R_MjgW8Wq8s2Ud_w7og.ICGNMqW7-6lKQVSnH03JMGvqoMXopOVkBbQqdbO24m0g.JPEG.cnsrkfl123%2F20230901%25A3%25DF184347.jpg",
             latitude: 37.519032,
             longitude: 126.886547,
@@ -100,6 +108,7 @@ struct RestaurantList {
             type: 300
         ),
         Restaurant(
+            id: 8,
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyMzA4MjJfMTMx%2FMDAxNjkyNzE0NjMzODUz.aupfFdz_c9ZgASbKrg7CkC0NSMGD26lC_yTVoqOqV3Ig.VJ-lTGz8I1lW7tAIzVjoVU3wXS0KI1trTV0u3eLVxCYg.JPEG%2F20230801_181655.jpg%3Ftype%3Dw1500_60_sharpen",
             latitude: 37.518940,
             longitude: 126.886298,
@@ -111,6 +120,7 @@ struct RestaurantList {
             type: 200
         ),
         Restaurant(
+            id: 9,
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyNDA1MDRfMTIg%2FMDAxNzE0ODAxODI2OTIz.CZvXaKI2gC1rj-emfR_4kft0J6iMnPTwIXz3daGZm5cg.A6J9Zr6IccLZm8uBTVDcqgXvneXoYSEsAi_PzEZjre8g.JPEG%2F20240504_134756.jpg.jpg%3Ftype%3Dw1500_60_sharpen",
             latitude: 37.516329,
             longitude: 126.889686,
@@ -122,6 +132,7 @@ struct RestaurantList {
             type: 100
         ),
         Restaurant(
+            id: 10,
             image: "https://media.istockphoto.com/id/1305297526/ko/%EC%82%AC%EC%A7%84/%EB%B0%94%EC%82%AD%EB%B0%94%EC%82%AD%ED%95%9C-%EA%B7%9C%EC%B9%B4%EC%B8%A0-%EC%83%90%EB%9F%AC%EB%93%9C.webp?b=1&s=170667a&w=0&k=20&c=I-ZJciXHYwoIDLlVL3wpEDfNex_6YRiZwQSjVmncSJw=",
             latitude: 37.517829,
             longitude: 126.887020,
@@ -133,6 +144,7 @@ struct RestaurantList {
             type: 100
         ),
         Restaurant(
+            id: 11,
             image: "https://media.istockphoto.com/id/1481907136/ko/%EC%82%AC%EC%A7%84/%EB%8F%88%EA%B0%80%EC%8A%A4-%EB%8F%BC%EC%A7%80%EA%B3%A0%EA%B8%B0-%ED%8A%80%EA%B9%80-%EB%A0%88%EC%8A%A4%ED%86%A0%EB%9E%91%EC%97%90%EC%84%9C-%EC%A0%91%EC%8B%9C-%EC%A0%9C%EA%B3%B5.webp?b=1&s=170667a&w=0&k=20&c=BTJpn5113rfBzydevp73K5gm_6fWlsh6T2RMyZ5unb4=",
             latitude: 37.516760,
             longitude: 126.889274,
@@ -144,6 +156,7 @@ struct RestaurantList {
             type: 100
         ),
         Restaurant(
+            id: 12,
             image: "https://images.unsplash.com/photo-1598504775866-e842291dbe10?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8JUVEJTg2JUEwJUVCJUE3JTg4JUVEJTg2JUEwJUVEJThDJThDJUVDJThBJUE0JUVEJTgzJTgwfGVufDB8fDB8fHww",
             latitude: 37.516996,
             longitude: 126.888047,
@@ -155,6 +168,7 @@ struct RestaurantList {
             type: 100
         ),
         Restaurant(
+            id: 13,
             image: "https://media.istockphoto.com/id/1133088344/ko/%EC%82%AC%EC%A7%84/%EC%88%9C%EB%8C%80%EA%B5%AD.webp?b=1&s=170667a&w=0&k=20&c=D9Er2FqMhhnvm4fY0s6mtzY7U3J2m6jXKPJxFur7cts=",
             latitude: 37.515690,
             longitude: 126.891630,
@@ -166,6 +180,7 @@ struct RestaurantList {
             type: 100
         ),
         Restaurant(
+            id: 14,
             image: "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fCVFQSVCNSVBRCVFQyU4OCU5OHxlbnwwfHwwfHx8MA%3D%3D",
             latitude: 37.518829,
             longitude: 126.887853,
@@ -177,6 +192,7 @@ struct RestaurantList {
             type: 100
         ),
         Restaurant(
+            id: 15,
             image: "https://images.unsplash.com/photo-1704890514547-b6b7d64086c1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fCVFQSVCOSU4MCVFQyVCOSU5OCVFQyVCMCU4QyVFQSVCMCU5Q3xlbnwwfHwwfHx8MA%3D%3D",
             latitude: 37.516829,
             longitude: 126.889325,
@@ -188,6 +204,7 @@ struct RestaurantList {
             type: 200
         ),
         Restaurant(
+            id: 16,
             image: "https://images.unsplash.com/photo-1629127524579-269c62b90a96?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8JUVDJTlBJUIwJUVCJThGJTk5fGVufDB8fDB8fHww",
             latitude: 37.516857,
             longitude: 126.889075,
