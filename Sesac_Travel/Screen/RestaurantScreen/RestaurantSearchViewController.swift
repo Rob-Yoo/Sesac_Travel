@@ -50,12 +50,22 @@ extension RestaurantSearchViewController: UITableViewDelegate, UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableIdentifier, for: indexPath) as! RestaurantTableViewCell
         let data = self.model.restaurantArray[indexPath.row]
         
-        cell.configure(data: data)
+        cell.configure(data: data, tag: indexPath.row)
+        cell.starButton.addTarget(self, action: #selector(self.starButtonTapped), for: .touchUpInside)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 325
+    }
+}
+
+extension RestaurantSearchViewController {
+    @objc private func starButtonTapped(sender: UIButton) {
+        let idx = sender.tag
+        
+        self.model.restaurantArray[idx].isStar.toggle()
+        self.restaurantTableView.reloadData()
     }
 }
 

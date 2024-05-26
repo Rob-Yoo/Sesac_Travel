@@ -25,8 +25,9 @@ class RestaurantTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func configure(data: Restaurant) {
+    func configure(data: Restaurant, tag: Int) {
         self.configureRestaurantImageView(imageURL: data.image)
+        self.configureStarButton(isStar: data.isStar, tag: tag)
         self.configureNameLabel(name: data.name)
         self.configureAddressLabel(address: data.address)
         self.configurePhoneNumberLabel(phoneNumber: data.phoneNumber)
@@ -38,6 +39,14 @@ class RestaurantTableViewCell: UITableViewCell {
         self.restaurantImageView.kf.setImage(with: imageURL)
         self.restaurantImageView.contentMode = .scaleAspectFill
         self.restaurantImageView.layer.cornerRadius = 10
+    }
+    
+    private func configureStarButton(isStar: Bool, tag: Int) {
+        let imageName = isStar ? "star.fill" : "star"
+        let image = UIImage(systemName: imageName)
+        
+        self.starButton.setImage(image, for: .normal)
+        self.starButton.tag = tag
     }
     
     private func configureNameLabel(name text: String) {
