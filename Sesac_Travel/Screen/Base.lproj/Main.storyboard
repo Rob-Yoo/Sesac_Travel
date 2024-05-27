@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gsZ-eW-7YA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GlE-Qr-XC4">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -15,13 +15,13 @@
             <objects>
                 <tableViewController id="XLn-yd-iQX" customClass="TravelMagazineTableViewController" customModule="Sesac_Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="450" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" id="m21-t3-gaV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="tjf-9p-wnf">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="27"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TravelMagazineTableViewCell" id="Zra-dh-qbJ" customClass="TravelMagazineTableViewCell" customModule="Sesac_Travel" customModuleProvider="target">
@@ -59,6 +59,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="f1d-D4-any" firstAttribute="leading" secondItem="alv-Zr-bIm" secondAttribute="leading" constant="50" id="2dD-jr-vJQ"/>
                                         <constraint firstItem="f1d-D4-any" firstAttribute="width" secondItem="KR1-uF-SyB" secondAttribute="width" id="3Ku-yG-R9m"/>
@@ -72,6 +73,7 @@
                                         <constraint firstAttribute="trailing" secondItem="E2O-hg-qPI" secondAttribute="trailing" constant="50" id="nlq-AR-GQn"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="magazineImageView" destination="KR1-uF-SyB" id="RYS-fk-Elm"/>
                                     <outlet property="magazineSubtitleLabel" destination="e8O-6U-hdS" id="m3C-Yv-gL8"/>
@@ -89,7 +91,57 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NP7-Nl-rsh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052.6717557251909" y="-31.690140845070424"/>
+            <point key="canvasLocation" x="2442" y="-20"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sml-MB-Vym">
+            <objects>
+                <tabBarController id="GlE-Qr-XC4" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="goN-lG-FFg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9Av-ev-EQX" kind="relationship" relationship="viewControllers" id="8vb-2J-gUs"/>
+                        <segue destination="LFl-FE-Rbm" kind="relationship" relationship="viewControllers" id="RPH-uY-DHz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0B4-x8-sHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="-9"/>
+        </scene>
+        <!--도시 상세 정보-->
+        <scene sceneID="Dgu-AC-rpy">
+            <objects>
+                <viewController id="VDp-di-KpX" customClass="CityDetailViewController" customModule="Sesac_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PcD-p6-KkT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tPx-07-cPo">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2vC-gQ-Xmk"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2vC-gQ-Xmk" firstAttribute="bottom" secondItem="tPx-07-cPo" secondAttribute="bottom" id="JYT-Dh-qbW"/>
+                            <constraint firstItem="tPx-07-cPo" firstAttribute="leading" secondItem="2vC-gQ-Xmk" secondAttribute="leading" id="X9m-GR-SQq"/>
+                            <constraint firstItem="tPx-07-cPo" firstAttribute="top" secondItem="2vC-gQ-Xmk" secondAttribute="top" id="Xzc-96-3Uf"/>
+                            <constraint firstItem="2vC-gQ-Xmk" firstAttribute="trailing" secondItem="tPx-07-cPo" secondAttribute="trailing" id="c7u-bg-nNV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="도시 상세 정보" id="g4o-gO-N0E"/>
+                    <connections>
+                        <outlet property="cityDetailTableView" destination="tPx-07-cPo" id="kK7-qs-uTz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5a-8C-12w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2337" y="711"/>
         </scene>
         <!--식당 검색-->
         <scene sceneID="MmI-Ga-X6A">
@@ -303,29 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZG-ZS-v3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1979.3893129770991" y="636.61971830985919"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="teG-58-Rli">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n24-SG-bPn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0hf-e9-hWo">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <navigationBarAppearance key="scrollEdgeAppearance"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="XLn-yd-iQX" kind="relationship" relationship="rootViewController" id="jn2-UK-HWO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wAz-VP-4t4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="127.48091603053435" y="-31.690140845070424"/>
+            <point key="canvasLocation" x="178" y="877"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BZq-Qv-QD6">
@@ -346,7 +376,70 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDJ-Jx-RhM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052.6717557251909" y="636.61971830985919"/>
+            <point key="canvasLocation" x="-491" y="868"/>
+        </scene>
+        <!--매거진-->
+        <scene sceneID="Xzw-gw-b8d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Av-ev-EQX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="매거진" id="obc-oN-AeN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Pt2-wp-BCy">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XLn-yd-iQX" kind="relationship" relationship="rootViewController" id="4af-bQ-jfd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRZ-QP-1VG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392" y="-30"/>
+        </scene>
+        <!--상세 정보-->
+        <scene sceneID="Axf-3J-Mfb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LFl-FE-Rbm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="상세 정보" id="fI5-RR-33s"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="v49-zR-qpI">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VDp-di-KpX" kind="relationship" relationship="rootViewController" id="oQy-e2-Tqp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Ol-mN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392" y="711"/>
         </scene>
     </scenes>
     <resources>

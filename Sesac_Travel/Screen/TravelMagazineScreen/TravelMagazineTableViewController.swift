@@ -16,6 +16,7 @@ class TravelMagazineTableViewController: UITableViewController {
         self.tableView.rowHeight = 450
         self.tableView.allowsSelection = false
         self.tableView.separatorStyle = .none
+        self.tableView.backgroundColor = .white
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,7 +24,6 @@ class TravelMagazineTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(#function)
         let reusableIdentifier = String(describing: TravelMagazineTableViewCell.self)
         let cell = self.tableView.dequeueReusableCell(withIdentifier: reusableIdentifier, for: indexPath) as! TravelMagazineTableViewCell
         let data = self.model.magazine[indexPath.row]
