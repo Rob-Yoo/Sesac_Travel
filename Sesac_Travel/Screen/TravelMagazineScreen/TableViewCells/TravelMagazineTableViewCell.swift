@@ -60,3 +60,7 @@ class TravelMagazineTableViewCell: UITableViewCell {
     }
 
 }
+
+extension TravelMagazineTableViewCell: UITableViewCellProtocol {
+    static var reusableIdentifer: String = String(describing: TravelMagazineTableViewCell.self)
+}

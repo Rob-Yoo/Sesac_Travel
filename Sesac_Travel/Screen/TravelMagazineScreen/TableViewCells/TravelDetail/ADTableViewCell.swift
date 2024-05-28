@@ -48,7 +48,9 @@ class ADTableViewCell: UITableViewCell {
     }
 }
 
-extension ADTableViewCell: TravelDetailCellProtocol {
+extension ADTableViewCell: TravelDetailCellProtocol, UITableViewCellProtocol {
+    static var reusableIdentifer = String(describing: ADTableViewCell.self)
+    
     func configureCellData(data: Travel) {
         self.adLabel.text = data.title
     }

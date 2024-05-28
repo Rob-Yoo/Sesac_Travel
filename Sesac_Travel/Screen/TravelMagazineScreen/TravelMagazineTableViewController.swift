@@ -24,9 +24,12 @@ class TravelMagazineTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reusableIdentifier = String(describing: TravelMagazineTableViewCell.self)
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: reusableIdentifier, for: indexPath) as! TravelMagazineTableViewCell
+        let reusableIdentifier = TravelMagazineTableViewCell.reusableIdentifer
         let data = self.model.magazine[indexPath.row]
+        
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: reusableIdentifier, for: indexPath) as? TravelMagazineTableViewCell else {
+            return UITableViewCell()
+        }
         
         cell.configure(data: data)
         return cell

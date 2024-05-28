@@ -54,7 +54,9 @@ class CityDetailTableViewCell: UITableViewCell {
     }
 }
 
-extension CityDetailTableViewCell: TravelDetailCellProtocol {
+extension CityDetailTableViewCell: TravelDetailCellProtocol, UITableViewCellProtocol {
+    static var reusableIdentifer = String(describing: CityDetailTableViewCell.self)
+    
     func configureCellData(data: Travel) {
         let url = URL(string: data.travel_image!)
 

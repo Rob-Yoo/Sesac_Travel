@@ -10,3 +10,5 @@ import Foundation
 protocol TravelDetailCellProtocol {
     func configureCellData(data: Travel)
 }
+
+

@@ -18,8 +18,9 @@ class CityDetailViewController: UIViewController, UITableViewDataSource {
         let adTableViewCell = String(describing: ADTableViewCell.self)
 
         super.viewDidLoad()
+        self.cityDetailTableView.backgroundColor = .white
         self.cityDetailTableView.dataSource = self
-        self.cityDetailTableView.register(.init(nibName: cityDetailTableViewCell, bundle: nil), forCellReuseIdentifier: cityDetailTableViewCell)
+        self.cityDetailTableView.register(UINib(nibName: cityDetailTableViewCell, bundle: nil), forCellReuseIdentifier: cityDetailTableViewCell)
         self.cityDetailTableView.register(.init(nibName: adTableViewCell, bundle: nil), forCellReuseIdentifier: adTableViewCell)
         
     }
@@ -30,9 +31,12 @@ class CityDetailViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let travel = self.travelList[indexPath.row]
-        let id = (travel.ad) ? String(describing: ADTableViewCell.self) : String(describing: CityDetailTableViewCell.self)
+        let id = (travel.ad) ? ADTableViewCell.reusableIdentifer : CityDetailTableViewCell.reusableIdentifer
         let cell = self.cityDetailTableView.dequeueReusableCell(withIdentifier: id, for: indexPath)
-        let travelDetailCell = cell as! TravelDetailCellProtocol
+        
+        guard let travelDetailCell = cell as? CityDetailTableViewCell else {
+            return UITableViewCell()
+        }
         
         travelDetailCell.configureCellData(data: travel)
         self.cityDetailTableView.rowHeight = (travel.ad) ? 75 : 120
