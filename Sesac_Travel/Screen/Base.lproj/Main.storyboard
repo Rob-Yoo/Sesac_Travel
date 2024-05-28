@@ -159,6 +159,7 @@
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJw-z8-a4F">
                                                 <rect key="frame" x="10" y="13.333333333333329" width="272.33333333333331" height="34"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -320,6 +321,7 @@
                                             <outlet property="addressLabel" destination="mh2-ra-lMl" id="XcK-Uz-thz"/>
                                             <outlet property="nameLabel" destination="GyY-1h-BT0" id="EgL-HM-miH"/>
                                             <outlet property="phoneNumberLabel" destination="ghX-Gm-8hL" id="HXV-y6-Y1d"/>
+                                            <outlet property="restaurantImageContainerView" destination="yZU-83-219" id="xdZ-fm-781"/>
                                             <outlet property="restaurantImageView" destination="lez-XJ-yFJ" id="5bD-u4-xhm"/>
                                             <outlet property="starButton" destination="zKP-fl-85Q" id="lG5-K3-atw"/>
                                         </connections>

@@ -24,6 +24,7 @@ class RestaurantSearchViewController: UIViewController {
         self.configureSearchButton()
         self.configureFoodTypeButtons()
 
+        self.restaurantTableView.backgroundColor = .white
         self.restaurantTableView.delegate = self
         self.restaurantTableView.dataSource = self
         

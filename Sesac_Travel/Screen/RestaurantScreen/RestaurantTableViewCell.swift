@@ -10,6 +10,7 @@ import Kingfisher
 
 class RestaurantTableViewCell: UITableViewCell {
     
+    @IBOutlet var restaurantImageContainerView: UIView!
     @IBOutlet var restaurantImageView: UIImageView!
     @IBOutlet var starButton: UIButton!
     
@@ -19,6 +20,8 @@ class RestaurantTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.contentView.backgroundColor = .white
+        self.configureLayout()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,43 +29,42 @@ class RestaurantTableViewCell: UITableViewCell {
     }
 
     func configure(data: Restaurant, tag: Int) {
-        self.configureRestaurantImageView(imageURL: data.image)
-        self.configureStarButton(isStar: data.isStar, tag: tag)
-        self.configureNameLabel(name: data.name)
-        self.configureAddressLabel(address: data.address)
-        self.configurePhoneNumberLabel(phoneNumber: data.phoneNumber)
-    }
-    
-    private func configureRestaurantImageView(imageURL url: String) {
-        let imageURL = URL(string: url)
+        let starImageName = data.isStar ? "star.fill" : "star"
+        let starImage = UIImage(systemName: starImageName)
+        let imageURL = URL(string: data.image)
         
         self.restaurantImageView.kf.setImage(with: imageURL)
+        self.starButton.setImage(starImage, for: .normal)
+        self.starButton.tag = tag
+        self.nameLabel.text = data.name
+        self.addressLabel.text = data.address
+        self.phoneNumberLabel.text = data.phoneNumber
+    }
+    
+    private func configureLayout() {
+        self.configureRestaurantImageView()
+        self.configureNameLabel()
+        self.configureAddressLabel()
+        self.configurePhoneNumberLabel()
+    }
+    
+    private func configureRestaurantImageView() {
+        self.restaurantImageContainerView.backgroundColor = .clear
         self.restaurantImageView.contentMode = .scaleAspectFill
         self.restaurantImageView.layer.cornerRadius = 10
     }
     
-    private func configureStarButton(isStar: Bool, tag: Int) {
-        let imageName = isStar ? "star.fill" : "star"
-        let image = UIImage(systemName: imageName)
-        
-        self.starButton.setImage(image, for: .normal)
-        self.starButton.tag = tag
-    }
-    
-    private func configureNameLabel(name text: String) {
-        self.nameLabel.text = text
+    private func configureNameLabel() {
         self.nameLabel.textColor = .black
         self.nameLabel.font = .boldSystemFont(ofSize: 20)
     }
     
-    private func configureAddressLabel(address text: String) {
-        self.addressLabel.text = text
+    private func configureAddressLabel() {
         self.addressLabel.textColor = .lightGray
         self.addressLabel.font = .systemFont(ofSize: 15, weight: .medium)
     }
     
-    private func configurePhoneNumberLabel(phoneNumber text: String) {
-        self.phoneNumberLabel.text = text
+    private func configurePhoneNumberLabel() {
         self.phoneNumberLabel.textColor = .lightGray
         self.phoneNumberLabel.font = .systemFont(ofSize: 15, weight: .medium)
     }
