@@ -12,22 +12,37 @@ class CityDetailViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var cityDetailTableView: UITableView!
     
     private let travelList = TravelInfo().travel
+    private let sb = UIStoryboard(name: "Main", bundle: nil)
 
     override func viewDidLoad() {
-        let cityDetailTableViewCell = String(describing: CityDetailTableViewCell.self)
-        let adTableViewCell = String(describing: ADTableViewCell.self)
-
         super.viewDidLoad()
+        
         self.cityDetailTableView.backgroundColor = .white
+        
         self.cityDetailTableView.delegate = self
         self.cityDetailTableView.dataSource = self
-        self.cityDetailTableView.register(UINib(nibName: cityDetailTableViewCell, bundle: nil), forCellReuseIdentifier: cityDetailTableViewCell)
-        self.cityDetailTableView.register(.init(nibName: adTableViewCell, bundle: nil), forCellReuseIdentifier: adTableViewCell)
+        self.cityDetailTableView.register(UINib(nibName: CityDetailTableViewCell.reusableIdentifer, bundle: nil), forCellReuseIdentifier: CityDetailTableViewCell.reusableIdentifer)
+        self.cityDetailTableView.register(UINib(nibName: ADTableViewCell.reusableIdentifer, bundle: nil), forCellReuseIdentifier: ADTableViewCell.reusableIdentifer)
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.travelList.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let travel = self.travelList[indexPath.row]
+        let identifier = (travel.ad) ? ADInfoViewController.identifier : TravelInfoViewController.identifier
+        let nextVC = self.sb.instantiateViewController(withIdentifier: identifier)
+        
+        if (travel.ad) {
+            let nav = UINavigationController(rootViewController: nextVC)
+            nav.modalPresentationStyle = .fullScreen
+            
+            self.present(nav, animated: true)
+        } else {
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -37,7 +52,6 @@ class CityDetailViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(#function)
         let travel = self.travelList[indexPath.row]
         let id = (travel.ad) ? ADTableViewCell.reusableIdentifer : CityDetailTableViewCell.reusableIdentifer
 

@@ -36,6 +36,8 @@
 		CCA6888D2C0489FD00DAB954 /* ADTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCA6888B2C0489FD00DAB954 /* ADTableViewCell.xib */; };
 		CCCBE5792C046331007F6D76 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBE5782C046331007F6D76 /* TravelModel.swift */; };
 		CCDEB14A2C0462BE009DB2A6 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCDEB1492C0462BE009DB2A6 /* CityDetailViewController.swift */; };
+		CCF69A0D2C07237E0052773D /* ADInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF69A0C2C07237E0052773D /* ADInfoViewController.swift */; };
+		CCF69A0F2C0723D30052773D /* UIViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF69A0E2C0723D30052773D /* UIViewControllerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		CCA6888B2C0489FD00DAB954 /* ADTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADTableViewCell.xib; sourceTree = "<group>"; };
 		CCCBE5782C046331007F6D76 /* TravelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		CCDEB1492C0462BE009DB2A6 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
+		CCF69A0C2C07237E0052773D /* ADInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADInfoViewController.swift; sourceTree = "<group>"; };
+		CCF69A0E2C0723D30052773D /* UIViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 		CC23DE122C0601C900EA89AF /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				CCF69A0E2C0723D30052773D /* UIViewControllerProtocol.swift */,
 				CC23DE132C0601DC00EA89AF /* UITableViewCellProtocol.swift */,
 			);
 			path = Protocol;
@@ -170,6 +175,7 @@
 				CC9DEF352C02FFDF00ECE8AC /* TravelMagazineTableViewController.swift */,
 				CCDEB1492C0462BE009DB2A6 /* CityDetailViewController.swift */,
 				CC23DE1F2C070EAC00EA89AF /* TravelInfoViewController.swift */,
+				CCF69A0C2C07237E0052773D /* ADInfoViewController.swift */,
 			);
 			path = TravelMagazineScreen;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				CC9DEF3B2C03073A00ECE8AC /* String+Extension.swift in Sources */,
 				CC9DEF302C02FCE100ECE8AC /* Restaurant.swift in Sources */,
 				CC23DE1E2C06C32A00EA89AF /* Subscription.swift in Sources */,
+				CCF69A0D2C07237E0052773D /* ADInfoViewController.swift in Sources */,
 				CCA688892C04888A00DAB954 /* TravelDetailCellProtocol.swift in Sources */,
 				CC9DEF472C0381A100ECE8AC /* Notification.Name+Extension.swift in Sources */,
 				CC9DEF1D2C02FC4500ECE8AC /* RestaurantSearchViewController.swift in Sources */,
@@ -320,6 +327,7 @@
 				CC23DE1C2C06C29200EA89AF /* DisposableBag.swift in Sources */,
 				CCDEB14A2C0462BE009DB2A6 /* CityDetailViewController.swift in Sources */,
 				CC9DEF362C02FFDF00ECE8AC /* TravelMagazineTableViewController.swift in Sources */,
+				CCF69A0F2C0723D30052773D /* UIViewControllerProtocol.swift in Sources */,
 				CC23DE142C0601DC00EA89AF /* UITableViewCellProtocol.swift in Sources */,
 				CC9DEF442C03399800ECE8AC /* RestaurantViewModel.swift in Sources */,
 				CCA6887F2C04734200DAB954 /* CityDetailTableViewCell.swift in Sources */,

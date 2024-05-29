@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gsZ-eW-7YA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GlE-Qr-XC4">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -151,17 +151,57 @@
         <!--Travel Info View Controller-->
         <scene sceneID="DiH-JJ-64D">
             <objects>
-                <viewController id="Yd2-Or-X7N" customClass="TravelInfoViewController" customModule="Sesac_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TravelInfoViewController" id="Yd2-Or-X7N" customClass="TravelInfoViewController" customModule="Sesac_Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hwa-3e-lZN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관광지 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="To3-He-vEY">
+                                <rect key="frame" x="94.666666666666686" y="399" width="204" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="n9K-P5-p1C"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="To3-He-vEY" firstAttribute="centerX" secondItem="Hwa-3e-lZN" secondAttribute="centerX" id="QgQ-he-Fhd"/>
+                            <constraint firstItem="To3-He-vEY" firstAttribute="centerY" secondItem="Hwa-3e-lZN" secondAttribute="centerY" id="Qzn-Au-Vin"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYe-qS-j4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3056" y="711"/>
+            <point key="canvasLocation" x="3055.7251908396947" y="710.56338028169023"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="7Qu-lW-qJH">
+            <objects>
+                <viewController storyboardIdentifier="ADInfoViewController" id="uhm-n1-0ra" customClass="ADInfoViewController" customModule="Sesac_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Gj-TI-LVo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7RB-RT-JL2">
+                                <rect key="frame" x="114" y="399" width="165" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cgB-q1-XAQ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7RB-RT-JL2" firstAttribute="centerY" secondItem="0Gj-TI-LVo" secondAttribute="centerY" id="60a-iX-vAE"/>
+                            <constraint firstItem="7RB-RT-JL2" firstAttribute="centerX" secondItem="0Gj-TI-LVo" secondAttribute="centerX" id="INO-gg-s03"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JjS-Pn-wQj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aFS-u8-T03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3873" y="711"/>
         </scene>
         <!--식당 검색-->
         <scene sceneID="MmI-Ga-X6A">

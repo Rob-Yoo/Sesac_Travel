@@ -15,7 +15,6 @@ class CityDetailTableViewCell: UITableViewCell {
     @IBOutlet private var placeImageView: UIImageView!
     @IBOutlet private var favoriteButton: UIButton!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.configureLayout()
