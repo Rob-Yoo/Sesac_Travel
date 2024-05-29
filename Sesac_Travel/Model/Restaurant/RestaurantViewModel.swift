@@ -7,25 +7,25 @@
 
 import Foundation
 
-class RestaurantViewModel {
-    lazy var output = self.service.restaurantList {
-        didSet {
-            NotificationCenter.default.post(name: .RestaurantModelChanged, object: nil)
-        }
-    }
+final class RestaurantViewModel {
+    lazy var restaurantList: Observable<[Restaurant]> = Observable(self.service.restaurantList)
     private var service = RestaurantService()
     
     func fetchSearchedRestaurants(query: String) {
         if (query.isEmpty) {
-            self.output = service.restaurantList
+            self.restaurantList.value = service.restaurantList
         } else {
-            self.output = service.search(query: query)
+            self.restaurantList.value = service.search(query: query)
         }
     }
-    
+//    
     func updateIsStar(idx: Int, id: Int) {
         self.service.updateStarData(id: id)
-        self.output[idx].isStar.toggle()
+        self.restaurantList.value[idx].isStar.toggle()
+    }
+    
+    func restaurantListDidChange(restaurantList list: [Restaurant]) {
+        self.restaurantList.value = list
     }
 }
 

@@ -55,3 +55,6 @@ extension ADTableViewCell: TravelDetailCellProtocol, UITableViewCellProtocol {
         self.adLabel.text = data.title
     }
 }
+
+
+

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RestaurantService {
+final class RestaurantService {
     var restaurantList = RestaurantList().restaurantArray
     
     func search(query: String) -> [Restaurant] {

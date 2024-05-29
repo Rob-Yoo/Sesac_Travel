@@ -40,6 +40,7 @@ class CityDetailViewController: UIViewController, UITableViewDataSource, UITable
         print(#function)
         let travel = self.travelList[indexPath.row]
         let id = (travel.ad) ? ADTableViewCell.reusableIdentifer : CityDetailTableViewCell.reusableIdentifer
+
         let cell = self.cityDetailTableView.dequeueReusableCell(withIdentifier: id, for: indexPath)
         
         guard let travelDetailCell = cell as? TravelDetailCellProtocol else {
@@ -50,3 +51,4 @@ class CityDetailViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
 }
+

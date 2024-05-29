@@ -22,10 +22,7 @@ class RestaurantTableViewCell: UITableViewCell {
         super.awakeFromNib()
         self.contentView.backgroundColor = .white
         self.configureLayout()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        self.starButton.addTarget(self, action: #selector(starButtonTapped), for: .touchUpInside)
     }
 
     func configure(data: Restaurant, tag: Int) {
@@ -39,6 +36,10 @@ class RestaurantTableViewCell: UITableViewCell {
         self.nameLabel.text = data.name
         self.addressLabel.text = data.address
         self.phoneNumberLabel.text = data.phoneNumber
+    }
+    
+    @objc private func starButtonTapped(sender: UIButton) {
+        
     }
     
     private func configureLayout() {
@@ -68,4 +69,8 @@ class RestaurantTableViewCell: UITableViewCell {
         self.phoneNumberLabel.textColor = .lightGray
         self.phoneNumberLabel.font = .systemFont(ofSize: 15, weight: .medium)
     }
+}
+
+extension RestaurantTableViewCell: UITableViewCellProtocol {
+    static let reusableIdentifer = String(describing: RestaurantTableViewCell.self)
 }

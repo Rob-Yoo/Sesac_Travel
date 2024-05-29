@@ -16,6 +16,7 @@ class RestaurantSearchViewController: UIViewController {
     @IBOutlet var restaurantTableView: UITableView!
     
     private var viewModel = RestaurantViewModel()
+    private var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +29,7 @@ class RestaurantSearchViewController: UIViewController {
         self.restaurantTableView.delegate = self
         self.restaurantTableView.dataSource = self
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateRestaurantList), name: .RestaurantModelChanged, object: nil)
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .RestaurantModelChanged, object: nil)
+        self.bindViewModel()
     }
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
@@ -50,18 +47,32 @@ class RestaurantSearchViewController: UIViewController {
     }
 }
 
+//MARK: - Binding ViewModel
+extension RestaurantSearchViewController {
+    private func bindViewModel() {
+        self.viewModel.restaurantList
+            .subscribe(on: self, disposeBag: self.disposeBag)
+            .onNext { [weak self] _ in
+                self?.restaurantTableView.reloadData()
+            }
+    }
+}
+
 //MARK: - UITableView Setting
 extension RestaurantSearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.output.count
+        return self.viewModel.restaurantList.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reusableIdentifier = String(describing: RestaurantTableViewCell.self)
-        let cell = tableView.dequeueReusableCell(withIdentifier: reusableIdentifier, for: indexPath) as! RestaurantTableViewCell
-        let data = self.viewModel.output[indexPath.row]
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.reusableIdentifer, for: indexPath) as? RestaurantTableViewCell else {
+            return UITableViewCell()
+        }
+
+        let idx = indexPath.row
+        let data = self.viewModel.restaurantList.value
         
-        cell.configure(data: data, tag: indexPath.row)
+        cell.configure(data: data[idx], tag: idx)
         cell.starButton.addTarget(self, action: #selector(self.starButtonTapped), for: .touchUpInside)
         return cell
     }
@@ -110,14 +121,9 @@ extension RestaurantSearchViewController {
     @objc private func starButtonTapped(sender: UIButton) {
         let idx = sender.tag
         let indexPath = IndexPath(row: idx, section: 0)
-        let id = self.viewModel.output[idx].id
+        let id = self.viewModel.restaurantList.value[idx].id
         
         self.viewModel.updateIsStar(idx: idx, id: id)
         self.restaurantTableView.reloadRows(at: [indexPath], with: .none)
     }
-    
-    @objc private func updateRestaurantList() {
-        self.restaurantTableView.reloadData()
-    }
 }
-

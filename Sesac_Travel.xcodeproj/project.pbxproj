@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		CC23DE142C0601DC00EA89AF /* UITableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23DE132C0601DC00EA89AF /* UITableViewCellProtocol.swift */; };
+		CC23DE172C06C0ED00EA89AF /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23DE162C06C0ED00EA89AF /* Observable.swift */; };
+		CC23DE1A2C06C16F00EA89AF /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23DE192C06C16F00EA89AF /* Observer.swift */; };
+		CC23DE1C2C06C29200EA89AF /* DisposableBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23DE1B2C06C29200EA89AF /* DisposableBag.swift */; };
+		CC23DE1E2C06C32A00EA89AF /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23DE1D2C06C32A00EA89AF /* Subscription.swift */; };
+		CC23DE202C070EAC00EA89AF /* TravelInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23DE1F2C070EAC00EA89AF /* TravelInfoViewController.swift */; };
 		CC9DEF192C02FC4500ECE8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DEF182C02FC4500ECE8AC /* AppDelegate.swift */; };
 		CC9DEF1B2C02FC4500ECE8AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DEF1A2C02FC4500ECE8AC /* SceneDelegate.swift */; };
 		CC9DEF1D2C02FC4500ECE8AC /* RestaurantSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DEF1C2C02FC4500ECE8AC /* RestaurantSearchViewController.swift */; };
@@ -35,6 +40,11 @@
 
 /* Begin PBXFileReference section */
 		CC23DE132C0601DC00EA89AF /* UITableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellProtocol.swift; sourceTree = "<group>"; };
+		CC23DE162C06C0ED00EA89AF /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		CC23DE192C06C16F00EA89AF /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		CC23DE1B2C06C29200EA89AF /* DisposableBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableBag.swift; sourceTree = "<group>"; };
+		CC23DE1D2C06C32A00EA89AF /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
+		CC23DE1F2C070EAC00EA89AF /* TravelInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoViewController.swift; sourceTree = "<group>"; };
 		CC9DEF152C02FC4500ECE8AC /* Sesac_Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sesac_Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9DEF182C02FC4500ECE8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9DEF1A2C02FC4500ECE8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +91,17 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		CC23DE152C06C0C300EA89AF /* CustomObservable */ = {
+			isa = PBXGroup;
+			children = (
+				CC23DE162C06C0ED00EA89AF /* Observable.swift */,
+				CC23DE192C06C16F00EA89AF /* Observer.swift */,
+				CC23DE1B2C06C29200EA89AF /* DisposableBag.swift */,
+				CC23DE1D2C06C32A00EA89AF /* Subscription.swift */,
+			);
+			path = CustomObservable;
+			sourceTree = "<group>";
+		};
 		CC9DEF0C2C02FC4500ECE8AC = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +121,7 @@
 		CC9DEF172C02FC4500ECE8AC /* Sesac_Travel */ = {
 			isa = PBXGroup;
 			children = (
+				CC23DE152C06C0C300EA89AF /* CustomObservable */,
 				CC23DE122C0601C900EA89AF /* Protocol */,
 				CC9DEF392C03072400ECE8AC /* Extension */,
 				CC9DEF342C02FFA800ECE8AC /* Screen */,
@@ -147,6 +169,7 @@
 				CCA6887A2C0472B800DAB954 /* TableViewCells */,
 				CC9DEF352C02FFDF00ECE8AC /* TravelMagazineTableViewController.swift */,
 				CCDEB1492C0462BE009DB2A6 /* CityDetailViewController.swift */,
+				CC23DE1F2C070EAC00EA89AF /* TravelInfoViewController.swift */,
 			);
 			path = TravelMagazineScreen;
 			sourceTree = "<group>";
@@ -279,8 +302,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC23DE172C06C0ED00EA89AF /* Observable.swift in Sources */,
+				CC23DE1A2C06C16F00EA89AF /* Observer.swift in Sources */,
 				CC9DEF3B2C03073A00ECE8AC /* String+Extension.swift in Sources */,
 				CC9DEF302C02FCE100ECE8AC /* Restaurant.swift in Sources */,
+				CC23DE1E2C06C32A00EA89AF /* Subscription.swift in Sources */,
 				CCA688892C04888A00DAB954 /* TravelDetailCellProtocol.swift in Sources */,
 				CC9DEF472C0381A100ECE8AC /* Notification.Name+Extension.swift in Sources */,
 				CC9DEF1D2C02FC4500ECE8AC /* RestaurantSearchViewController.swift in Sources */,
@@ -289,7 +315,9 @@
 				CC9DEF192C02FC4500ECE8AC /* AppDelegate.swift in Sources */,
 				CCCBE5792C046331007F6D76 /* TravelModel.swift in Sources */,
 				CCA6888C2C0489FD00DAB954 /* ADTableViewCell.swift in Sources */,
+				CC23DE202C070EAC00EA89AF /* TravelInfoViewController.swift in Sources */,
 				CC9DEF1B2C02FC4500ECE8AC /* SceneDelegate.swift in Sources */,
+				CC23DE1C2C06C29200EA89AF /* DisposableBag.swift in Sources */,
 				CCDEB14A2C0462BE009DB2A6 /* CityDetailViewController.swift in Sources */,
 				CC9DEF362C02FFDF00ECE8AC /* TravelMagazineTableViewController.swift in Sources */,
 				CC23DE142C0601DC00EA89AF /* UITableViewCellProtocol.swift in Sources */,
