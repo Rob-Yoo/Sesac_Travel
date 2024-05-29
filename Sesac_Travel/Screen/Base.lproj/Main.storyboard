@@ -106,6 +106,7 @@
                     <connections>
                         <segue destination="9Av-ev-EQX" kind="relationship" relationship="viewControllers" id="8vb-2J-gUs"/>
                         <segue destination="LFl-FE-Rbm" kind="relationship" relationship="viewControllers" id="RPH-uY-DHz"/>
+                        <segue destination="US3-nR-bBc" kind="relationship" relationship="viewControllers" id="fWH-a8-7is"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0B4-x8-sHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -417,7 +418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZG-ZS-v3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178" y="877"/>
+            <point key="canvasLocation" x="-1085" y="877"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BZq-Qv-QD6">
@@ -438,7 +439,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDJ-Jx-RhM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491" y="868"/>
+            <point key="canvasLocation" x="-1650" y="877"/>
         </scene>
         <!--매거진-->
         <scene sceneID="Xzw-gw-b8d">
@@ -502,6 +503,98 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZU-Ol-mN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1392" y="711"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="FxO-7h-YXR">
+            <objects>
+                <viewController id="C7F-W4-t4M" customClass="CityInfoViewController" customModule="Sesac_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MEz-bD-7RU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZML-Ke-cOs">
+                                <rect key="frame" x="0.0" y="10" width="393" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="C7F-W4-t4M" id="Zpg-fL-CiI"/>
+                                </connections>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AeA-eD-cl6">
+                                <rect key="frame" x="25" y="76" width="343" height="32"/>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChanged:" destination="C7F-W4-t4M" eventType="valueChanged" id="Fb8-yK-K8Z"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aMy-Jy-gMc">
+                                <rect key="frame" x="0.0" y="122" width="393" height="544"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="N0P-Ac-f5N"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZML-Ke-cOs" firstAttribute="leading" secondItem="N0P-Ac-f5N" secondAttribute="leading" id="1C9-G6-Y6a"/>
+                            <constraint firstItem="aMy-Jy-gMc" firstAttribute="leading" secondItem="N0P-Ac-f5N" secondAttribute="leading" id="4ME-Rm-mGK"/>
+                            <constraint firstItem="N0P-Ac-f5N" firstAttribute="bottom" secondItem="aMy-Jy-gMc" secondAttribute="bottom" id="IKO-YO-VU9"/>
+                            <constraint firstItem="AeA-eD-cl6" firstAttribute="top" secondItem="ZML-Ke-cOs" secondAttribute="bottom" constant="10" id="Wgj-BW-akL"/>
+                            <constraint firstItem="aMy-Jy-gMc" firstAttribute="top" secondItem="AeA-eD-cl6" secondAttribute="bottom" constant="15" id="Yk8-WE-gvB"/>
+                            <constraint firstItem="N0P-Ac-f5N" firstAttribute="trailing" secondItem="aMy-Jy-gMc" secondAttribute="trailing" id="Yoh-xN-v0o"/>
+                            <constraint firstItem="ZML-Ke-cOs" firstAttribute="trailing" secondItem="N0P-Ac-f5N" secondAttribute="trailing" id="drs-fS-2kF"/>
+                            <constraint firstItem="N0P-Ac-f5N" firstAttribute="trailing" secondItem="AeA-eD-cl6" secondAttribute="trailing" constant="25" id="eJZ-fh-igl"/>
+                            <constraint firstItem="AeA-eD-cl6" firstAttribute="leading" secondItem="N0P-Ac-f5N" secondAttribute="leading" constant="25" id="fgi-RY-XKL"/>
+                            <constraint firstItem="ZML-Ke-cOs" firstAttribute="top" secondItem="N0P-Ac-f5N" secondAttribute="top" constant="10" id="i61-mJ-ExY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="인기 도시" id="jco-Wp-jyF"/>
+                    <connections>
+                        <outlet property="cityInfoTableView" destination="aMy-Jy-gMc" id="qJT-tT-hYX"/>
+                        <outlet property="citySearchBar" destination="ZML-Ke-cOs" id="eZm-f2-ib2"/>
+                        <outlet property="filterSegmentedControl" destination="AeA-eD-cl6" id="xJk-EE-GUf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sm1-XM-cvC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2318.320610687023" y="1479.5774647887324"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="dEk-Bk-QZ0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="US3-nR-bBc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="인기 도시" id="ikm-Mz-UFD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="a67-OF-sQq">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C7F-W4-t4M" kind="relationship" relationship="rootViewController" id="mo7-kx-RFX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1k6-Bu-RKP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1391.6030534351144" y="1479.5774647887324"/>
         </scene>
     </scenes>
     <resources>

@@ -13,6 +13,10 @@
 		CC23DE1C2C06C29200EA89AF /* DisposableBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23DE1B2C06C29200EA89AF /* DisposableBag.swift */; };
 		CC23DE1E2C06C32A00EA89AF /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23DE1D2C06C32A00EA89AF /* Subscription.swift */; };
 		CC23DE202C070EAC00EA89AF /* TravelInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC23DE1F2C070EAC00EA89AF /* TravelInfoViewController.swift */; };
+		CC5E4D132C0747A200FBA9E1 /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E4D122C0747A200FBA9E1 /* CityInfo.swift */; };
+		CC5E4D182C074D1400FBA9E1 /* CityInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E4D172C074D1400FBA9E1 /* CityInfoTableViewCell.xib */; };
+		CC5E4D192C074D1400FBA9E1 /* CityInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E4D162C074D1400FBA9E1 /* CityInfoTableViewCell.swift */; };
+		CC5E4D1B2C07551B00FBA9E1 /* CityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E4D1A2C07551B00FBA9E1 /* CityInfoViewController.swift */; };
 		CC9DEF192C02FC4500ECE8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DEF182C02FC4500ECE8AC /* AppDelegate.swift */; };
 		CC9DEF1B2C02FC4500ECE8AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DEF1A2C02FC4500ECE8AC /* SceneDelegate.swift */; };
 		CC9DEF1D2C02FC4500ECE8AC /* RestaurantSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DEF1C2C02FC4500ECE8AC /* RestaurantSearchViewController.swift */; };
@@ -47,6 +51,10 @@
 		CC23DE1B2C06C29200EA89AF /* DisposableBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposableBag.swift; sourceTree = "<group>"; };
 		CC23DE1D2C06C32A00EA89AF /* Subscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscription.swift; sourceTree = "<group>"; };
 		CC23DE1F2C070EAC00EA89AF /* TravelInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoViewController.swift; sourceTree = "<group>"; };
+		CC5E4D122C0747A200FBA9E1 /* CityInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
+		CC5E4D162C074D1400FBA9E1 /* CityInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoTableViewCell.swift; sourceTree = "<group>"; };
+		CC5E4D172C074D1400FBA9E1 /* CityInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityInfoTableViewCell.xib; sourceTree = "<group>"; };
+		CC5E4D1A2C07551B00FBA9E1 /* CityInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoViewController.swift; sourceTree = "<group>"; };
 		CC9DEF152C02FC4500ECE8AC /* Sesac_Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sesac_Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9DEF182C02FC4500ECE8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9DEF1A2C02FC4500ECE8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,11 +179,8 @@
 		CC9DEF3C2C031CB200ECE8AC /* TravelMagazineScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CCF57C792C07465D00486D64 /* ViewControllers */,
 				CCA6887A2C0472B800DAB954 /* TableViewCells */,
-				CC9DEF352C02FFDF00ECE8AC /* TravelMagazineTableViewController.swift */,
-				CCDEB1492C0462BE009DB2A6 /* CityDetailViewController.swift */,
-				CC23DE1F2C070EAC00EA89AF /* TravelInfoViewController.swift */,
-				CCF69A0C2C07237E0052773D /* ADInfoViewController.swift */,
 			);
 			path = TravelMagazineScreen;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			children = (
 				CC9DEF2D2C02FCCF00ECE8AC /* MagazineInfo.swift */,
 				CCCBE5782C046331007F6D76 /* TravelModel.swift */,
+				CC5E4D122C0747A200FBA9E1 /* CityInfo.swift */,
 			);
 			path = TravelMagazine;
 			sourceTree = "<group>";
@@ -213,6 +219,8 @@
 			children = (
 				CCA688852C0485A600DAB954 /* TravelDetail */,
 				CC9DEF372C0302FE00ECE8AC /* TravelMagazineTableViewCell.swift */,
+				CC5E4D162C074D1400FBA9E1 /* CityInfoTableViewCell.swift */,
+				CC5E4D172C074D1400FBA9E1 /* CityInfoTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -227,6 +235,18 @@
 				CCA6888B2C0489FD00DAB954 /* ADTableViewCell.xib */,
 			);
 			path = TravelDetail;
+			sourceTree = "<group>";
+		};
+		CCF57C792C07465D00486D64 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CC9DEF352C02FFDF00ECE8AC /* TravelMagazineTableViewController.swift */,
+				CCDEB1492C0462BE009DB2A6 /* CityDetailViewController.swift */,
+				CC23DE1F2C070EAC00EA89AF /* TravelInfoViewController.swift */,
+				CCF69A0C2C07237E0052773D /* ADInfoViewController.swift */,
+				CC5E4D1A2C07551B00FBA9E1 /* CityInfoViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5E4D182C074D1400FBA9E1 /* CityInfoTableViewCell.xib in Resources */,
 				CC9DEF222C02FC4600ECE8AC /* Assets.xcassets in Resources */,
 				CC9DEF252C02FC4600ECE8AC /* Base in Resources */,
 				CC9DEF202C02FC4500ECE8AC /* Base in Resources */,
@@ -311,6 +332,7 @@
 				CC23DE172C06C0ED00EA89AF /* Observable.swift in Sources */,
 				CC23DE1A2C06C16F00EA89AF /* Observer.swift in Sources */,
 				CC9DEF3B2C03073A00ECE8AC /* String+Extension.swift in Sources */,
+				CC5E4D1B2C07551B00FBA9E1 /* CityInfoViewController.swift in Sources */,
 				CC9DEF302C02FCE100ECE8AC /* Restaurant.swift in Sources */,
 				CC23DE1E2C06C32A00EA89AF /* Subscription.swift in Sources */,
 				CCF69A0D2C07237E0052773D /* ADInfoViewController.swift in Sources */,
@@ -318,9 +340,11 @@
 				CC9DEF472C0381A100ECE8AC /* Notification.Name+Extension.swift in Sources */,
 				CC9DEF1D2C02FC4500ECE8AC /* RestaurantSearchViewController.swift in Sources */,
 				CC9DEF492C03970800ECE8AC /* RestaurantService.swift in Sources */,
+				CC5E4D132C0747A200FBA9E1 /* CityInfo.swift in Sources */,
 				CC9DEF2E2C02FCCF00ECE8AC /* MagazineInfo.swift in Sources */,
 				CC9DEF192C02FC4500ECE8AC /* AppDelegate.swift in Sources */,
 				CCCBE5792C046331007F6D76 /* TravelModel.swift in Sources */,
+				CC5E4D192C074D1400FBA9E1 /* CityInfoTableViewCell.swift in Sources */,
 				CCA6888C2C0489FD00DAB954 /* ADTableViewCell.swift in Sources */,
 				CC23DE202C070EAC00EA89AF /* TravelInfoViewController.swift in Sources */,
 				CC9DEF1B2C02FC4500ECE8AC /* SceneDelegate.swift in Sources */,

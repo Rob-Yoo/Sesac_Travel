@@ -6,7 +6,8 @@
 //
 
 import Foundation
-
+//        transform
+// Intput -------------> Output
 final class RestaurantViewModel {
     lazy var restaurantList: Observable<[Restaurant]> = Observable(self.service.restaurantList)
     private var service = RestaurantService()
