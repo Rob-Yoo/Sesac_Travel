@@ -39,7 +39,7 @@ class CityInfoViewController: UIViewController {
 extension CityInfoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        135ㅇ
+        135
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

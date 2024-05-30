@@ -41,7 +41,10 @@ class CityDetailViewController: UIViewController, UITableViewDataSource, UITable
             
             self.present(nav, animated: true)
         } else {
-            self.navigationController?.pushViewController(nextVC, animated: true)
+            guard let travelInfoVC = nextVC as? TravelInfoViewController else { return }
+            
+            travelInfoVC.city = travel
+            self.navigationController?.pushViewController(travelInfoVC, animated: true)
         }
     }
 
