@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,6 +108,7 @@
                         <segue destination="9Av-ev-EQX" kind="relationship" relationship="viewControllers" id="8vb-2J-gUs"/>
                         <segue destination="LFl-FE-Rbm" kind="relationship" relationship="viewControllers" id="RPH-uY-DHz"/>
                         <segue destination="US3-nR-bBc" kind="relationship" relationship="viewControllers" id="fWH-a8-7is"/>
+                        <segue destination="0vE-CE-8wj" kind="relationship" relationship="viewControllers" id="YdO-gT-L6U"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0B4-x8-sHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -121,28 +123,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tPx-07-cPo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Acn-TS-E8j">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="LfH-8h-hr5">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="666"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </tableView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2vC-gQ-Xmk"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2vC-gQ-Xmk" firstAttribute="bottom" secondItem="tPx-07-cPo" secondAttribute="bottom" id="JYT-Dh-qbW"/>
-                            <constraint firstItem="tPx-07-cPo" firstAttribute="leading" secondItem="2vC-gQ-Xmk" secondAttribute="leading" id="X9m-GR-SQq"/>
-                            <constraint firstItem="tPx-07-cPo" firstAttribute="top" secondItem="2vC-gQ-Xmk" secondAttribute="top" id="Xzc-96-3Uf"/>
-                            <constraint firstItem="2vC-gQ-Xmk" firstAttribute="trailing" secondItem="tPx-07-cPo" secondAttribute="trailing" id="c7u-bg-nNV"/>
+                            <constraint firstItem="Acn-TS-E8j" firstAttribute="leading" secondItem="2vC-gQ-Xmk" secondAttribute="leading" id="L4H-qF-8Fe"/>
+                            <constraint firstItem="2vC-gQ-Xmk" firstAttribute="trailing" secondItem="Acn-TS-E8j" secondAttribute="trailing" id="Lq0-z7-nPW"/>
+                            <constraint firstItem="Acn-TS-E8j" firstAttribute="top" secondItem="2vC-gQ-Xmk" secondAttribute="top" id="ffG-K5-mqs"/>
+                            <constraint firstItem="2vC-gQ-Xmk" firstAttribute="bottom" secondItem="Acn-TS-E8j" secondAttribute="bottom" id="joh-vH-LMB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="도시 상세 정보" id="g4o-gO-N0E"/>
                     <connections>
-                        <outlet property="cityDetailTableView" destination="tPx-07-cPo" id="kK7-qs-uTz"/>
+                        <outlet property="cityDetailTableView" destination="Acn-TS-E8j" id="p20-rz-oId"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5a-8C-12w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -654,6 +651,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1k6-Bu-RKP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1391.6030534351144" y="1479.5774647887324"/>
+        </scene>
+        <!--맛집 지도-->
+        <scene sceneID="2I3-RE-GBr">
+            <objects>
+                <viewController id="6c0-WM-M3Z" customClass="RestaurantMapViewController" customModule="Sesac_Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dLR-az-iaP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czJ-hw-b7c">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ktg-2f-idG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ktg-2f-idG" firstAttribute="bottom" secondItem="czJ-hw-b7c" secondAttribute="bottom" id="Wbc-7P-gcY"/>
+                            <constraint firstItem="czJ-hw-b7c" firstAttribute="leading" secondItem="ktg-2f-idG" secondAttribute="leading" id="ZgS-jV-ZKM"/>
+                            <constraint firstItem="ktg-2f-idG" firstAttribute="trailing" secondItem="czJ-hw-b7c" secondAttribute="trailing" id="mKE-38-eM2"/>
+                            <constraint firstItem="czJ-hw-b7c" firstAttribute="top" secondItem="ktg-2f-idG" secondAttribute="top" id="rde-az-jAb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="맛집 지도" id="nMn-z1-4cB"/>
+                    <connections>
+                        <outlet property="mapView" destination="czJ-hw-b7c" id="G6O-0i-xqi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wno-3D-bH5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2318" y="2237"/>
+        </scene>
+        <!--맛집 지도-->
+        <scene sceneID="NHr-Aa-vMs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0vE-CE-8wj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="맛집 지도" id="e3w-8x-0eU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HXA-WX-8H6">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6c0-WM-M3Z" kind="relationship" relationship="rootViewController" id="CJi-o5-5ZZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95S-nI-ujG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392" y="2237"/>
         </scene>
     </scenes>
     <resources>
