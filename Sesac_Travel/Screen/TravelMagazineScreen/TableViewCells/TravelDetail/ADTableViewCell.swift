@@ -9,11 +9,11 @@ import UIKit
 
 class ADTableViewCell: UITableViewCell {
 
-    @IBOutlet var adBackgroundView: UIView!
-    @IBOutlet var badgeView: UIView!
-    @IBOutlet var adLabel: UILabel!
+    @IBOutlet private var adBackgroundView: UIView!
+    @IBOutlet private var badgeView: UIView!
+    @IBOutlet private var adLabel: UILabel!
     
-    private var colorList: [UIColor] = [.red, .blue, .orange, .yellow, .green, .purple]
+    var contentsColor: UIColor = [.red, .blue, .orange, .yellow, .green, .purple].randomElement()!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,9 +29,7 @@ class ADTableViewCell: UITableViewCell {
     }
     
     private func configureADBackgroundView() {
-        let color = self.colorList.randomElement()!
-
-        self.adBackgroundView.backgroundColor = color
+        self.adBackgroundView.backgroundColor = contentsColor
         self.adBackgroundView.layer.cornerRadius = 10
     }
     

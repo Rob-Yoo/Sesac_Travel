@@ -9,12 +9,12 @@ import UIKit
 
 class TravelInfoViewController: UIViewController {
 
-    @IBOutlet var imageContainerView: UIView!
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var heartButton: UIButton!
-    @IBOutlet var cityTitleLabel: UILabel!
-    @IBOutlet var cityDescriptionLabel: UILabel!
-    @IBOutlet var cityDetailLabel: UILabel!
+    @IBOutlet private var imageContainerView: UIView!
+    @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var heartButton: UIButton!
+    @IBOutlet private var cityTitleLabel: UILabel!
+    @IBOutlet private var cityDescriptionLabel: UILabel!
+    @IBOutlet private var cityDetailLabel: UILabel!
     
     var city: Travel?
     
