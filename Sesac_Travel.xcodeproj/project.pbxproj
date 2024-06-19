@@ -18,6 +18,7 @@
 		CC5E4D182C074D1400FBA9E1 /* CityInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5E4D172C074D1400FBA9E1 /* CityInfoTableViewCell.xib */; };
 		CC5E4D192C074D1400FBA9E1 /* CityInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E4D162C074D1400FBA9E1 /* CityInfoTableViewCell.swift */; };
 		CC5E4D1B2C07551B00FBA9E1 /* CityInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E4D1A2C07551B00FBA9E1 /* CityInfoViewController.swift */; };
+		CC6571B62C231EF700D9AF49 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6571B52C231EF700D9AF49 /* UIAlertController+Extension.swift */; };
 		CC9DEF192C02FC4500ECE8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DEF182C02FC4500ECE8AC /* AppDelegate.swift */; };
 		CC9DEF1B2C02FC4500ECE8AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DEF1A2C02FC4500ECE8AC /* SceneDelegate.swift */; };
 		CC9DEF1D2C02FC4500ECE8AC /* RestaurantSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9DEF1C2C02FC4500ECE8AC /* RestaurantSearchViewController.swift */; };
@@ -57,6 +58,7 @@
 		CC5E4D162C074D1400FBA9E1 /* CityInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CC5E4D172C074D1400FBA9E1 /* CityInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityInfoTableViewCell.xib; sourceTree = "<group>"; };
 		CC5E4D1A2C07551B00FBA9E1 /* CityInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoViewController.swift; sourceTree = "<group>"; };
+		CC6571B52C231EF700D9AF49 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		CC9DEF152C02FC4500ECE8AC /* Sesac_Travel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sesac_Travel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9DEF182C02FC4500ECE8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9DEF1A2C02FC4500ECE8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				CC9DEF3A2C03073A00ECE8AC /* String+Extension.swift */,
 				CC9DEF462C0381A100ECE8AC /* Notification.Name+Extension.swift */,
+				CC6571B52C231EF700D9AF49 /* UIAlertController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				CC5E4D1B2C07551B00FBA9E1 /* CityInfoViewController.swift in Sources */,
 				CC9DEF302C02FCE100ECE8AC /* Restaurant.swift in Sources */,
 				CC23DE1E2C06C32A00EA89AF /* Subscription.swift in Sources */,
+				CC6571B62C231EF700D9AF49 /* UIAlertController+Extension.swift in Sources */,
 				CCF69A0D2C07237E0052773D /* ADInfoViewController.swift in Sources */,
 				CCA688892C04888A00DAB954 /* TravelDetailCellProtocol.swift in Sources */,
 				CC9DEF472C0381A100ECE8AC /* Notification.Name+Extension.swift in Sources */,

@@ -14,13 +14,51 @@ class RestaurantMapViewController: UIViewController {
 
     private let rawRestaurantList: [Restaurant] = RestaurantList().restaurantArray
     private lazy var filteredRestaurantList: [Restaurant] = self.rawRestaurantList
+    private let locationManger = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationManger.delegate = self
         self.configureFilterBarButton()
         self.configureMapView()
     }
     
+}
+
+//MARK: - CLLocationManger
+extension RestaurantMapViewController: CLLocationManagerDelegate {
+    
+    private func checkLocationAuthorization() {
+        DispatchQueue.global().async {
+            let isEnabled = CLLocationManager.locationServicesEnabled()
+                
+            if (isEnabled) {
+                let status = self.locationManger.authorizationStatus
+                
+                DispatchQueue.main.async {
+                    switch status {
+                    case .notDetermined: // 아직 위치 서비스 권한 설정에 대한 선택이 되지 않은 경우
+                        self.locationManger.desiredAccuracy = kCLLocationAccuracyHundredMeters
+                        self.locationManger.requestWhenInUseAuthorization()
+                    case .denied: // 거부한 경우
+                        let alert = UIAlertController.makeLocationSettingAlert()
+                        self.present(alert, animated: true)
+                    case .authorizedWhenInUse:
+                        self.locationManger.startUpdatingLocation()
+                    default:
+                        return
+                    }
+                }
+                
+            } else {
+                
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    }
 }
 
 // MARK: - Configure Subviews
