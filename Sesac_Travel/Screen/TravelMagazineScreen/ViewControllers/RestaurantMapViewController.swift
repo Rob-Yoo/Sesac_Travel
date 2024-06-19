@@ -21,9 +21,12 @@ class RestaurantMapViewController: UIViewController {
         
         self.locationManger.delegate = self
         self.configureFilterBarButton()
-        self.configureMapView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.checkLocationAuthorization()
+    }
 }
 
 //MARK: - CLLocationManger
@@ -43,6 +46,8 @@ extension RestaurantMapViewController: CLLocationManagerDelegate {
                         self.locationManger.requestWhenInUseAuthorization()
                     case .denied: // 거부한 경우
                         let alert = UIAlertController.makeLocationSettingAlert()
+                        
+                        self.configureMapView()
                         self.present(alert, animated: true)
                     case .authorizedWhenInUse:
                         self.locationManger.startUpdatingLocation()
@@ -52,12 +57,21 @@ extension RestaurantMapViewController: CLLocationManagerDelegate {
                 }
                 
             } else {
-                
+                self.configureMapView()
             }
         }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let coordinate = locations.last?.coordinate {
+            self.configureMapView(center: coordinate)
+        }
+        
+        self.locationManger.stopUpdatingLocation()
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        self.checkLocationAuthorization()
     }
 }
 
@@ -69,11 +83,14 @@ extension RestaurantMapViewController {
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = filterBarButton
     }
     
-    private func configureMapView() {
-        let pos = CLLocationCoordinate2D(latitude: 37.51791, longitude: 126.88655)
-        
-        self.mapView.region = MKCoordinateRegion(center: pos, latitudinalMeters: 1000, longitudinalMeters: 1000)
-        filteredRestaurantList.forEach {
+    private func configureMapView(center: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 37.51791, longitude: 126.88655)) {
+
+        self.mapView.region = MKCoordinateRegion(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        self.configureRestaurantMarkers()
+    }
+    
+    private func configureRestaurantMarkers() {
+        self.filteredRestaurantList.forEach {
             let (lat, lon) = ($0.latitude, $0.longitude)
             let pos = CLLocationCoordinate2D(latitude: lat, longitude: lon)
             let annotation = MKPointAnnotation()
